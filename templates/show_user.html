@@ -1,0 +1,80 @@
+{% extends 'navbaradmin.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <title>Student Details</title>
+    <style>
+        body {
+
+            font-family: 'Times New Roman', Times, serif;
+            background-color: royalblue;
+
+        }
+
+        .table {
+            font-size: 1.5vw;
+            margin-top: 1vw;
+        }
+
+        h2 {
+            font-size: 3vw;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <center>
+        <h2>Show Product Details</h2>
+        <table class="table table-borderless table-striped table-hover table-bordered table-dark">
+            <thead class="thead-primary">
+                <tr>
+                    <td>First Name</td>
+                    <td>Last Name</td>
+                    <td>User Name</td>
+                    <td>Address</td>
+                    <td>Contact Number</td>
+                    <td>Email</td>
+                    <td>Image</td>
+                    <td>Action</td>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in customer %}
+                <tr>
+                    <td>{{c.user.first_name}}</td>
+                    <td>{{c.user.last_name}}</td>
+                    <td>{{c.user.username}}</td>
+                    <td>{{c.address}}</td>
+                    <td>{{c.contact_number}}</td>
+                    <td>{{c.user.email}}</td>
+                    <td>{{c.image}} <br>
+                        <img src="{{c.image.url }}" class="img-fluid" style="width: 10vw;" >
+                    </td>
+                    <td>
+                        <a href="{% url 'deleteuser' c.user.id %}"><i class="fas fa-trash"></i>Delete</a>
+                    </td> 
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table><br />
+    </center>
+    <a href="{% url 'admin_home' %}" class="btn btn-success " style="margin-left: 45vw; margin-top: 1vw;">Back</a>
+
+    {% endblock %}
+</body>
+
+</html>

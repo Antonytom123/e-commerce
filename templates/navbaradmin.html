@@ -1,0 +1,84 @@
+{% load static %}
+<style>
+    .nav-link {
+            margin-right: 15px;
+        }
+</style>
+<div>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse order-md-1" id="collapsibleNavbar">
+            <img src="{{'static/images/logoC1.png'}}" alt="" style="width: 4vw;">
+            <h2 style="color: white;">CROMA</h2>
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'admin_home' %}">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'category' %}">Add Category</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'product' %}">Add Product</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'show_product' %}">Show Product</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'show_user' %}">Show User</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+{% block content %}
+{% endblock %}
+<footer class="footer bg bg-dark" style="color: white;">
+    <div class="container ">
+      <div class="row">
+        <div class="col-md-3 ">
+          <h4>Contact</h4>
+          <p>16 cross,3rd main,tcpalya, <br>Bangalore</p>
+          <p>Email: croma@example.com</p>
+          <p>Phone: +91 9966337780</p>
+        </div>
+        <div class="col-md-3">
+          <h4>Quick Links</h4>
+          <ul class="list-unstyled" >
+            <li><a href="#" style="color: white;">Home</a></li>
+            <li><a href="#" style="color: white;">Products</a></li>
+            <li><a href="#" style="color: white;">Services</a></li>
+            <li><a href="#" style="color: white;">About Us</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h4>My Account</h4>
+          <ul class="list-unstyled">
+            <li><a href="#" style="color: white;">Login</a></li>
+            <li><a href="#" style="color: white;">Register</a></li>
+            <li><a href="#" style="color: white;">My Orders</a></li>
+            <li><a href="#" style="color: white;">Profile</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h4>Help</h4>
+          <ul class="list-unstyled">
+            <p>FAQ</p>
+            <p>Contact Us</p>
+            <p>Shipping Info</p>
+            <p>Privacy Policy</p>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <p class="text-center">© 2023 Croma. All rights reserved.</p>
+    </div>
+  </footer>

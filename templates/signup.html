@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-image: url('{% static "images/smokeimg.webp" %}');
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: 100vw 100vh;
+        }
+
+        .nav-link {
+            margin-right: 15px;
+        }
+        .signup {
+        margin-left: 25vw;
+        margin-right: 25vw;
+        background-color: rgba(0, 123, 255, 0.5); /* Blue with transparency */
+        border: none;
+        box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.2); /* Blue shadow */
+    }
+
+    .card-body {
+        background-color: rgba(248, 249, 250); /* Light gray */
+    }
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse order-md-1" id="collapsibleNavbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'signup' %}">Signup</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'signin'%}">Signin</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    {% for message in messages %}
+    <h5>
+        <div style="width: 20%; color: rgb(165, 42, 42); margin-left: 25vw; margin-top: 5vw; background-color: yellow;">
+            {{ message }}
+        </div>
+    </h5>
+    {% endfor %}
+    </div>
+    <div class="signup">
+        <h2 style="text-align: center;"> Signup</h2>
+        <div class="card signup-card">
+            <div class="card-body">
+                <form enctype="multipart/form-data" action="{% url 'signupurl' %}" method='post' class="needs-validation" novalidate>
+                    {% csrf_token %}
+
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="firstname">First Name:</label>
+                            <input class="form-control" type="text" name="firstname" id="firstname"
+                                placeholder="Enter First Name" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid first name.
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="lastname">Last Name:</label>
+                            <input class="form-control" type="text" name="lastname" id="lastname"
+                                placeholder="Enter Last Name" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid last name.
+                            </div>
+                        </div>
+                    </div>
+                    
+                        <!-- Username -->
+                        <div class="col-md-14 mb-3">
+                            <label for="username">Username:</label>
+                            <input class="form-control" type="text" name="username" id="username"
+                                placeholder="Enter Username" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid username.
+                            </div>
+                        </div>
+                        <!-- Address -->
+                        <div class="col-md-14 mb-3">
+                            <label for="address">Address:</label>
+                            <textarea class="form-control" name="address" id="address" cols="30" rows="3"
+                                placeholder="Enter Address" required></textarea>
+                            <div class="invalid-feedback">
+                                Please provide a valid address.
+                            </div>
+                        </div>
+                    
+                        <!-- Contact Number -->
+                        <div class="col-md-14 mb-3">
+                            <label for="contact">Contact Number:</label>
+                            <input class="form-control" type="text" name="contact" id="contact"
+                                placeholder="Enter Contact Number" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid contact number.
+                            </div>
+                        </div>
+                        <!-- Email -->
+                        <div class="col-md-14 mb-3">
+                            <label for="email">Email:</label>
+                            <input class="form-control" type="text" name="email" id="email"
+                                placeholder="Enter Email" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid email.
+                            </div>
+                        </div>
+                    
+                    <!-- Image -->
+                    <div class="form-group">
+                        <label>Upload your Photo</label> <br>
+                        <input type="file" name="image" id="image" accept="image/*" required>
+                        <div class="invalid-feedback">
+                            Please upload a valid image.
+                        </div>
+                    </div>
+                    
+                        <!-- Password -->
+                        <div class="col-md-14 mb-3">
+                            <label for="password">Password:</label>
+                            <input class="form-control" type="password" name="password" id="password"
+                                placeholder="Enter Password" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid password.
+                            </div>
+                        </div>
+                        <!-- Confirm Password -->
+                        <div class="col-md-14 mb-3">
+                            <label for="cfmpassword">Confirm Password:</label>
+                            <input class="form-control" type="password" name="cfmpassword" id="cfmpassword"
+                                placeholder="Enter Confirm Password" required>
+                            <div class="invalid-feedback">
+                                Please confirm your password.
+                            </div>
+                        </div>
+                    
+                    <button class="btn btn-primary btn-block" type="submit">Sign Up</button>
+                </form>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

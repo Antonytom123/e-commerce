@@ -1,0 +1,79 @@
+{% extends 'navbaruser.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+
+    
+        body {
+          font-family: 'Times New Roman', Times, serif;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <form>
+<div class="container">
+    <h2>My Cart</h2>
+    <div class="card mb-4">
+      <div class="card-body p-4">
+        {% for c in cartitems %}
+          <div class="card mb-2">
+            <div class="row g-0">
+              <div class="col-md-2">
+                <img src="{{ c.product.image.url }}" class="img-fluid" alt="Product Image">
+              </div>
+              <div class="col-md-6">
+                <div class="card-body">
+                  <h5 class="card-title">{{ c.product.product }}</h5>
+                  <p class="card-text">{{ c.product.description }}</p>
+                  {% comment %} <p class="card-text"><small class="text-muted">Price: {{ c.product.price }}</small></p> {% endcomment %}
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card-body d-flex flex-column justify-content-between">
+                  <p class="card-text">Quantity: {{ c.quantity }}</p>
+                  <p class="card-text">Total: {{ c.total_price }}</p>
+                  <a href="{% url 'removecart' c.product.id %}" class="btn btn-primary" style="width: 200px;">Remove from Cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+        
+      </div>
+    </div>
+    <div class="card mb-5">
+      <div class="card-body p-4">
+    
+        <div class="float-right">
+          <p class="mb-0 me-5 d-flex align-items-center">
+            <span style="font-size: 30px; ">Order total:</span> <span  style="font-size: 30px; "
+              class="lead fw-normal">{{totalprice}}</span>
+          </p>
+        </div>
+    
+      </div>
+    </div>
+    </div>
+</form>
+
+{% endblock %}
+</body>
+
+</html>

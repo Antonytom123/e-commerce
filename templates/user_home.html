@@ -1,0 +1,208 @@
+{% extends 'navbaruser.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+
+    
+        body {
+          font-family: 'Times New Roman', Times, serif;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+<center>
+    {% for message in messages %}
+    <h5>
+        <div  style="width: 20%; color: rgb(165, 42, 42);  margin-top: 5vw; background-color: yellow;">
+            {{ message }}
+        </div>
+    </h5>
+        {% endfor %}
+    </div>
+</center>
+        <form >
+            <!-- COURSEL SECTON STARTS -->
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
+                <li data-target="#myCarousel" data-slide-to="5"></li>
+              </ol>
+            
+              <!-- Slides -->
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="{% static 'images/caroselimg.gif' %}" alt="Slide 1">
+                  <div class="carousel-caption">
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="{% static 'images/caroselimg2.avif' %}" alt="Slide 2">
+                  <div class="carousel-caption">
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="{% static 'images/caroselkids.gif' %}" alt="Slide 3">
+                  <div class="carousel-caption">
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="{% static 'images/caroselimg3.avif' %}" alt="Slide 4">
+                  <div class="carousel-caption">
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="{% static 'images/caroselimg4.avif' %}" alt="Slide 5">
+                  <div class="carousel-caption">
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="{% static 'images/caroselkids1.avif' %}" alt="Slide 6">
+                  <div class="carousel-caption">
+                  </div>
+                </div>
+              </div>
+            
+              <!-- Controls -->
+              <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </a>
+              <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </a>
+            </div>
+
+            <h1 style="text-align: center; background-color: rgb(243, 104, 104);">TOP-OF-THE-LINE-BRANDS</h1>
+            <img src="{% static 'images/brandimg1.avif' %}" alt="" style="width: 312px;">
+            <img src="{% static 'images/brandimg2.avif' %}" alt="" style="width: 312px;">
+            <img src="{% static 'images/brandimg3.avif' %}" alt="" style="width: 312px;">
+            <img src="{% static 'images/brandimg4.avif' %}" alt="" style="width: 312px;">
+
+
+            <h1 style="color: rgb(165, 89, 236); text-align: center;">TODAY'S STYLE SCOOP</h1> 
+
+
+           <!-- COURSEL SECTON STARTS -->
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+              </ol>
+            
+              <!-- Slides -->
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="{% static 'images/styleimg1.webp' %}" alt="Slide 1">
+                  <div class="carousel-caption">
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="{% static 'images/styleimg2.avif' %}" alt="Slide 2">
+                  <div class="carousel-caption">
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="{% static 'images/stykeimg4.avif' %}" alt="Slide 3">
+                  <div class="carousel-caption">
+                  </div>
+                </div>
+              </div>
+            
+              <!-- Controls -->
+              <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </a>
+              <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </a>
+            </div>
+
+            <h1 style="color: rgb(236, 153, 89); text-align: center;">BESTSELLING STYLES</h1> 
+
+            <img src="{% static 'images/bestselling.avif' %}" alt="" style="width: 417px;">
+            <img src="{% static 'images/bestselling1.avif' %}" alt="" style="width: 417px;">
+            <img src="{% static 'images/bestselling2.avif' %}" alt="" style="width: 417px;">
+            
+
+            <h1 style="color: rgb(165, 89, 236); text-align: center;">CUTE STYLES</h1>
+
+            <!-- COURSEL SECTON STARTS -->
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+
+              </ol>
+            
+              <!-- Slides -->
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="{% static 'images/kidsimg1.avif' %}" alt="Slide 1">
+                  <div class="carousel-caption">
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="{% static 'images/kidsimg2.avif' %}" alt="Slide 2">
+                  <div class="carousel-caption">
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="{% static 'images/kidsimg3.avif' %}" alt="Slide 3">
+                  <div class="carousel-caption">
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="{% static 'images/kidsimg4.avif' %}" alt="Slide 4">
+                  <div class="carousel-caption">
+                  </div>
+                </div>
+
+              </div>
+            
+              <!-- Controls -->
+              <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </a>
+              <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </a>
+            </div>
+
+            <h1 style=" text-align: center;">NOW TREND-ING</h1> 
+
+            <img src="{% static 'images/nowtrending.avif' %}" alt="" style="width: 417px;">
+            <img src="{% static 'images/nowtrending1.avif' %}" alt="" style="width: 417px;">
+            <img src="{% static 'images/nowtrending2.avif' %}" alt="" style="width: 417px;">
+
+        </form>
+
+    {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+{% extends 'navbaradmin.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+
+        .product {
+            margin-left: 5vw;
+            margin-right: 5vw;
+            background-color: rgb(228, 194, 131); 
+            box-shadow: 0px 0px 10px rgba(38, 33, 176, 0.2); 
+            margin-top: 3vw;
+        }
+    
+        .card-body {
+            background-color: rgb(227, 190, 119);
+            border: rgba(65, 85, 184, 0.9);
+            height: 38vw; 
+        }
+    
+        body {
+          font-family: 'Times New Roman', Times, serif;
+          background-image: url('{% static "images/signupimg1.avif" %}');
+          background-attachment: fixed;
+          background-repeat: no-repeat;
+          background-size: 100vw 100vh;
+          color: white;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="product">
+        <h2 style="text-align: center;"> Add Product</h2>
+        <div class="card home-card">
+            <div class="card-body" >
+                <form enctype="multipart/form-data" action="{% url 'producturl' %}" method='post' class="needs-validation" novalidate>
+                    {% csrf_token %}
+
+                <div class="col-md-14 mb-3">
+                    <label for="name">Product Name:</label>
+                    <input class="form-control" type="text" name="name" id="name"
+                        placeholder="Enter product Name" required>
+                    <div class="invalid-feedback">
+                        Please provide a valid Product Name.
+                    </div>
+                </div>
+
+                <div class="col-md-14 mb-3">
+                    <label for="description">Product Description:</label>
+                    <input class="form-control" type="text" name="description" id="description"
+                        placeholder="Enter product description" required>
+                    <div class="invalid-feedback">
+                        Please provide a valid Product Description.
+                    </div>
+                </div>
+
+                <div class="col-md-14 mb-3">
+                    <label for="price">Product Price:</label>
+                    <input class="form-control" type="text" name="price" id="price"
+                        placeholder="Enter Product Price" required>
+                    <div class="invalid-feedback">
+                        Please provide a valid Product price.
+                    </div>
+                </div>
+
+                <div class="col-md-14 mb-3">
+                    <label for="category">Category:</label>
+                    <select class="form-control" name="select" id="" >
+                        <option value="">Select Category</option>
+                        {% for c in category %}
+                        <option value="{{c.id}}">{{c.category_name}}</option>
+                        {% endfor %}
+                    </select>
+                    <div class="invalid-feedback">
+                        Please provide a valid category.
+                    </div>
+                </div>
+
+                <div class="col-md-14 mb-3">
+                    <label for="image">Image:</label> <br>
+                        <input class="form-control" type="file" name="file" id="file" accept="image/*"  required>
+                    <div class="invalid-feedback">
+                        Please provide a valid image.
+                    </div>
+                </div>
+
+            <center>
+            <button class="btn btn-primary btn-block" type="submit" style="width: 30vw; ">Add</button>
+        </center>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+    {% endblock %}
+</body>
+
+</html>
